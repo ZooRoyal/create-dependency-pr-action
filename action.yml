@@ -1,0 +1,9 @@
+# action.yml
+name: 'Name: Create pullrequests for depending packages'
+description: 'Description: Create pullrequests for depending packages'
+outputs:
+  response:
+    description: 'Response > Description > Output from command'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

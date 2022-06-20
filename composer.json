@@ -1,0 +1,31 @@
+{
+    "name": "rdss/create-dependency-pr-action",
+    "description": "create pullrequests for depending repositories",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "IT-Verticals",
+            "email": "dev@rdss.it"
+        }
+    ],
+    "require": {
+        "symfony/console": "^5.4"
+    },
+    "require-dev": {
+        "zooroyal/coding-standard": "^3.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Console\\": "src"
+        },
+        "classmap": ["src"]
+    },
+    "config": {
+        "allow-plugins": {
+            "mindplay/composer-locator": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
+        }
+    }
+}
