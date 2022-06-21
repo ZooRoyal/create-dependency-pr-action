@@ -1,6 +1,10 @@
 # action.yml
 name: 'Name: Create pullrequests for depending packages'
 description: 'Description: Create pullrequests for depending packages'
+inputs:
+  packageName:
+    description: 'the name of the package to work on'
+    required: true
 outputs:
   response:
     description: 'Response > Description > Output from command'

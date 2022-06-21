@@ -2,12 +2,14 @@
 <?php
 // application.php
 
-require __DIR__.'/vendor/autoload.php';
+var_dump($argv);
 
-use Symfony\Component\Console\Application;
-
-$application = new Application();
-$action = new ActionCommand();
-
-$application->add($action);
-$application->run();
+//require __DIR__.'/vendor/autoload.php';
+//
+//use Symfony\Component\Console\Application;
+//
+//$application = new Application();
+//$action = new ActionCommand();
+//
+//$application->add($action);
+//$application->run();
