@@ -16,4 +16,3 @@ COPY . /application/
 RUN cd /application && composer install
 
 ENTRYPOINT [ "php", "/application/action" ]
-CMD ["create-prs"]

@@ -1,15 +1,16 @@
 #!/usr/bin/env php
 <?php
-// application.php
 
-var_dump($argv);
+require __DIR__.'/vendor/autoload.php';
 
-//require __DIR__.'/vendor/autoload.php';
-//
-//use Symfony\Component\Console\Application;
-//
-//$application = new Application();
-//$action = new ActionCommand();
-//
-//$application->add($action);
-//$application->run();
+use PrivatePackagist\ApiClient\Client;
+
+$packageName = $argv[1];
+$packagistApiToken = $argv[2];
+$packagistApiSecret = $argv[3];
+
+$client = new Client();
+$client->authenticate($packagistApiToken, $packagistApiSecret);
+
+$packages = $client->packages()->listDependents('rdss/test-create-pr-action-c');
+var_dump($packages);

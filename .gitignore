@@ -1,0 +1,16 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+./Icon?
+ehthumbs.db
+Thumbs.db
+
+# Composer
+/composer.phar
+recovery/common/vendor/composer/
+**vendor/
+!/vendor/.htaccess
+/composer.lock

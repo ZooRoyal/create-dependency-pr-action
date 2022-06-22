@@ -5,6 +5,12 @@ inputs:
   packageName:
     description: 'the name of the package to work on'
     required: true
+  PACKAGIST_API_TOKEN:
+    description: 'packagist api token'
+    required: true
+  PACKAGIST_API_SECRET:
+    description: 'packagist api secret'
+    required: true
 outputs:
   response:
     description: 'Response > Description > Output from command'
@@ -13,3 +19,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.packageName }}
+    - ${{ inputs.PACKAGIST_API_TOKEN }}
+    - ${{ inputs.PACKAGIST_API_SECRET }}
