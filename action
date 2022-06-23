@@ -1,18 +1,23 @@
 #!/usr/bin/env php
 <?php
 
-require __DIR__.'/vendor/autoload.php';
+if(file_exists(__DIR__.'/vendor/autoload.php')) {
+    require __DIR__.'/vendor/autoload.php';
+} else {
+    require __DIR__.'/../../autoload.php';
+}
+
+$packageName = getenv('packageName') ?: $argv[1];
+$packagistApiToken = getenv('PACKAGIST_API_TOKEN') ?: $argv[2];
+$packagistApiSecret = getenv('PACKAGIST_API_SECRET') ?: $argv[3];
 
 use PrivatePackagist\ApiClient\Client;
 
-$packageName = $argv[1];
-$packagistApiToken = $argv[2];
-$packagistApiSecret = $argv[3];
 $client = new Client();
 $client->authenticate($packagistApiToken, $packagistApiSecret);
 $packages = $client->packages()->listDependents($packageName);
 $urls = [];
 foreach ($packages as $package) {
-    $urls[] = ['repository' => ltrim(parse_url($package['config']['url'], PHP_URL_PATH), '/')];
+    $urls[] = ltrim(parse_url($package['config']['url'], PHP_URL_PATH), '/');
 }
 echo json_encode($urls);
