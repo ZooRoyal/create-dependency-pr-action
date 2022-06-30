@@ -20,4 +20,4 @@ $urls = [];
 foreach ($packages as $package) {
     $urls[] = ltrim(parse_url($package['config']['url'], PHP_URL_PATH), '/');
 }
-echo json_encode($urls);
+echo '::set-output name=packages::' . json_encode($urls);

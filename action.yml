@@ -12,7 +12,7 @@ inputs:
     description: 'packagist api secret'
     required: true
 outputs:
-  response:
+  packages:
     description: 'Response > Description > Output from command'
 runs:
   using: 'docker'
